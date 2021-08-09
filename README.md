@@ -7,28 +7,28 @@ The API service can be utilized by following the protocol
 
 ##### Get the list of countries, their capitals and total area
 ```
-/countries
+/api/v1/countries
 ``` 
 
 ##### Get the capital and total area of a specific country using an index
 ```
-/countries/<index_no>
+/api/v1/countries/<index_no>
 ```
 
 ##### Get the capital of a requested country
 ```
-/countries/<index_no>/capital
+/api/v1/countries/<index_no>/capital
 ```
 
 ##### Get the total area of a requested country
 ```
-/countries/<index_no>/area
+/api/v1/countries/<index_no>/area
 ```
 
 ##### FOR DEBUG: Use /echo as a prefix to echo information of the requestor
 For example:
 ```
-echo/countries/20/area
+/api/v1/echo/countries/20/area
 ```
 
 ### Installing the Dependencies
