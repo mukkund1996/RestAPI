@@ -108,19 +108,10 @@ def test_get_area(country_id):
     "http://localhost:9532/api/v1/echo/countrie",  # Typo in the subdomain
     "http://localhost:9532/api/v1/countrie",
     "http://localhost:9532/api/v1/countries/area",  # Missing index
+    "http://localhost:9532/api/v1/echo/countries/1000",  # Invalid index
+    "http://localhost:9532/api/v1/countries/10000",
 ])
 def test_resource_error(url):
     response = requests.get(url)
     # Validate response headers and body contents, e.g. status code.
     assert response.status_code == 404
-
-
-
-@pytest.mark.parametrize("url", [
-    "http://localhost:9532/api/v1/echo/countries/1000",  # Invalid index
-    "http://localhost:9532/api/v1/countries/10000",
-])
-def test_server_error(url):
-    response = requests.get(url)
-    # Validate response headers and body contents, e.g. status code.
-    assert response.status_code == 500
